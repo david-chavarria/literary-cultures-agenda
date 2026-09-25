@@ -1,0 +1,835 @@
+<title>La agenda de Literary Cultures</title>
+<meta name="description" content="Lectura estadística y bilingüe de la agenda historiográfica de Literary Cultures of Latin America (Valdés & Kadir, eds., 2004).">
+<style>
+:root{
+  --bg:#e9e9ee; --card:#ffffff; --card-2:#f4f4f7; --chip:#f0f0f4;
+  --ink:#17171c; --ink-2:#5c5c68; --ink-3:#9a9aa6;
+  --line:#ececf1; --line-2:#e0e0e7;
+  --violet:#6c4cff; --violet-2:#8f77ff; --violet-soft:#ece7ff;
+  --lime:#c2f000; --lime-ink:#2b3300; --sky:#4fb8e8;
+  --black:#1a1a1f;
+  --v1:#6c4cff; --v2:#4fb8e8; --v3:#c2f000;
+  --hm0:#f1edff; --hm1:#e2d9ff; --hm2:#cbbcff; --hm3:#ac95ff; --hm4:#8f77ff; --hm5:#6c4cff; --hm6:#5636e0; --hm7:#3d1fae;
+  --shadow:0 1px 2px rgba(20,20,40,.04),0 8px 30px rgba(20,20,50,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#131317; --card:#1d1d23; --card-2:#26262e; --chip:#2a2a33;
+  --ink:#f3f3f7; --ink-2:#bcbcc9; --ink-3:#83838f;
+  --line:#2b2b33; --line-2:#37373f;
+  --violet:#8f77ff; --violet-2:#a894ff; --violet-soft:#2c2550;
+  --lime:#c2f000; --lime-ink:#20260a; --sky:#5cc0ee;
+  --black:#0f0f13;
+  --v1:#8f77ff; --v2:#5cc0ee; --v3:#c2f000;
+  --hm0:#241d4d; --hm1:#2f2568; --hm2:#3d2f8c; --hm3:#513dc0; --hm4:#6c4cff; --hm5:#8f77ff; --hm6:#ac95ff; --hm7:#cbbcff;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 34px rgba(0,0,0,.35);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#131317; --card:#1d1d23; --card-2:#26262e; --chip:#2a2a33;
+  --ink:#f3f3f7; --ink-2:#bcbcc9; --ink-3:#83838f;
+  --line:#2b2b33; --line-2:#37373f;
+  --violet:#8f77ff; --violet-2:#a894ff; --violet-soft:#2c2550;
+  --lime:#c2f000; --lime-ink:#20260a; --sky:#5cc0ee; --black:#0f0f13;
+  --v1:#8f77ff; --v2:#5cc0ee; --v3:#c2f000;
+  --hm0:#241d4d; --hm1:#2f2568; --hm2:#3d2f8c; --hm3:#513dc0; --hm4:#6c4cff; --hm5:#8f77ff; --hm6:#ac95ff; --hm7:#cbbcff;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 34px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Public Sans",system-ui,-apple-system,sans-serif;line-height:1.62;
+  -webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+.wrap{max-width:1060px;margin:0 auto;padding:20px 20px 80px}
+@media(max-width:560px){.wrap{padding:14px 14px 64px}}
+h1,h2,h3,.big{font-family:"Archivo",system-ui,sans-serif;text-wrap:balance;letter-spacing:-.02em}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(135deg,#6c4cff 0%,#8f77ff 46%,#4fb8e8 100%);
+  border-radius:28px;padding:38px 34px 34px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;
+  background:radial-gradient(circle,rgba(194,240,0,.55),transparent 62%);pointer-events:none}
+.hero .eyebrow{color:rgba(255,255,255,.85)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+.hero h1{font-size:clamp(28px,5.4vw,50px);font-weight:800;line-height:1.04;margin:14px 0 0;color:#fff}
+.hero h1 em{font-style:italic;font-weight:700}
+.hero .subt{font-family:"Archivo";font-weight:600;font-size:clamp(14px,2.2vw,17px);color:rgba(255,255,255,.9);margin-top:6px}
+.hero p{max-width:64ch;color:rgba(255,255,255,.92);font-size:15.5px;margin:16px 0 0}
+.hero .meta{margin-top:20px;font-size:13px;color:rgba(255,255,255,.85);line-height:1.5}
+.hero .meta b{color:#fff}
+/* ---------- kpi ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:16px}
+.kpi{background:var(--card);border-radius:20px;padding:20px 22px;box-shadow:var(--shadow)}
+.kpi .v{font-family:"Archivo";font-weight:800;font-size:40px;line-height:1;color:var(--ink);letter-spacing:-.03em}
+.kpi .v small{font-size:22px;color:var(--violet);font-weight:700}
+.kpi .l{font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.4}
+.kpi .badge{display:inline-block;margin-top:12px;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  padding:3px 10px;border-radius:20px;background:var(--violet-soft);color:var(--violet)}
+.kpi .badge.lime{background:var(--lime);color:var(--lime-ink)}
+.kpi .badge.sky{background:color-mix(in srgb,var(--sky) 22%,transparent);color:var(--sky)}
+/* ---------- card ---------- */
+.card{background:var(--card);border-radius:24px;padding:26px 28px;box-shadow:var(--shadow);margin-top:16px}
+@media(max-width:560px){.card{padding:20px 18px;border-radius:20px}}
+.chead{display:flex;align-items:flex-start;gap:14px}
+.cnum{flex:none;width:42px;height:42px;border-radius:13px;background:var(--violet-soft);color:var(--violet);
+  display:flex;align-items:center;justify-content:center;font-family:"Archivo";font-weight:800;font-size:16px}
+.chead .tt{flex:1;min-width:0}
+.chead h2{font-size:clamp(19px,2.8vw,26px);font-weight:800;margin:0;line-height:1.12}
+.chead .en{font-family:"Archivo";font-weight:600;font-size:13.5px;color:var(--ink-3);margin-top:2px}
+.arrow{flex:none;width:38px;height:38px;border-radius:50%;background:var(--card-2);border:1px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;color:var(--ink-2);text-decoration:none;font-size:16px;transition:.15s}
+.arrow:hover{background:var(--violet);color:#fff;border-color:var(--violet)}
+.lead{color:var(--ink-2);font-size:15.5px;margin:16px 0 0;max-width:74ch}
+.lead b{color:var(--ink)}
+/* panel (inner) */
+.panel{background:var(--card-2);border-radius:18px;padding:18px 18px 16px;margin-top:18px}
+.ptitle{font-family:"Archivo";font-weight:700;font-size:13.5px;color:var(--ink)}
+.pnote{font-size:12px;color:var(--ink-3);margin-top:3px;margin-bottom:14px}
+/* prose */
+.prose{margin-top:18px;max-width:74ch}
+.prose p{margin:0 0 13px;color:var(--ink-2);font-size:15px;line-height:1.68}
+.prose p strong{color:var(--ink);font-weight:600}
+.prose .ref{font-style:italic}
+/* bars */
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:minmax(150px,258px) 1fr;gap:14px;align-items:center}
+.bar .lab{font-size:12.5px;line-height:1.22;text-align:right}
+.bar .lab .es{color:var(--ink);font-weight:600;display:block}
+.bar .lab .en2{color:var(--ink-3);font-size:11px;font-style:italic;display:block}
+.bar .track{position:relative;height:26px}
+.bar .fill{position:absolute;inset:0 auto 0 0;border-radius:8px;min-width:6px;transition:width .2s}
+.bar .val{position:absolute;left:100%;margin-left:8px;top:50%;transform:translateY(-50%);
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.bar .valin{position:absolute;right:8px;top:50%;transform:translateY(-50%);
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:700;white-space:nowrap}
+@media(max-width:560px){.bar{grid-template-columns:1fr}.bar .lab{text-align:left}}
+/* stacked */
+.strow{display:grid;grid-template-columns:minmax(150px,258px) 1fr;gap:14px;align-items:center;margin-bottom:9px}
+.strow .lab{font-size:12.5px;line-height:1.22;text-align:right}
+.strow .lab .es{color:var(--ink);font-weight:600;display:block}
+.strow .lab .en2{color:var(--ink-3);font-size:11px;font-style:italic;display:block}
+.strack{display:flex;height:26px;gap:3px}
+.seg{border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;min-width:16px;cursor:default}
+@media(max-width:560px){.strow{grid-template-columns:1fr}.strow .lab{text-align:left}}
+/* legend / pills */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 16px}
+.pill{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2);
+  background:var(--chip);border:1px solid var(--line-2);border-radius:22px;padding:5px 12px;font-weight:500}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+/* donut */
+.donutwrap{display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:center}
+.donut{flex:none}
+.dlegend{display:flex;flex-direction:column;gap:10px;min-width:180px}
+.dlegend .row{display:flex;align-items:center;gap:10px;font-size:13.5px}
+.dlegend .row .nm{color:var(--ink);font-weight:600}
+.dlegend .row .en3{color:var(--ink-3);font-style:italic;font-size:11.5px}
+.dlegend .row .n{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-weight:700;color:var(--ink-2)}
+/* heatmap */
+.hmwrap{overflow-x:auto;padding-bottom:6px}
+.hm{border-collapse:separate;border-spacing:3px}
+.hm th.corner{background:transparent}
+.hm th.col span{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;
+  font-family:"Public Sans";font-weight:600;font-size:11.5px;color:var(--ink-2);display:inline-block;padding:6px 0}
+.hm th.col{vertical-align:bottom;text-align:center}
+.hm th.row{text-align:right;white-space:nowrap;position:sticky;left:0;background:var(--card);z-index:2;padding-right:10px}
+.hm th.row .es{color:var(--ink);font-weight:600;font-size:12px;display:block;line-height:1.15}
+.hm th.row .en2{color:var(--ink-3);font-size:10.5px;font-style:italic;display:block}
+.hm td{width:34px;height:30px;text-align:center;border-radius:7px;
+  font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:11.5px;cursor:default}
+.hm td.z{background:var(--card-2);color:var(--ink-3);opacity:.5}
+.hmleg{display:flex;align-items:center;gap:9px;font-size:11.5px;color:var(--ink-3);margin-top:14px}
+.hmleg .ramp{display:flex;gap:2px}.hmleg .ramp i{width:18px;height:13px;border-radius:3px;display:block}
+/* callout */
+.callout{background:var(--violet-soft);border-radius:16px;padding:16px 20px;margin-top:18px;
+  font-size:14.5px;color:var(--ink-2);border-left:4px solid var(--violet)}
+.callout b{color:var(--ink)}
+/* glosario */
+.gtable{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+.gtable td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.gtable td:first-child{color:var(--ink);font-weight:600;width:46%}
+.gtable td:last-child{color:var(--ink-3);font-style:italic}
+.gcols{columns:2;column-gap:26px}
+@media(max-width:640px){.gcols{columns:1}}
+.gcols .card{break-inside:avoid;margin-top:0;margin-bottom:16px;box-shadow:none;background:var(--card-2)}
+/* synthesis list */
+.syn{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.syn .item{display:flex;gap:14px;align-items:flex-start}
+.syn .k{flex:none;width:30px;height:30px;border-radius:9px;background:var(--lime);color:var(--lime-ink);
+  font-family:"Archivo";font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+.syn .t{font-size:15px;color:var(--ink-2)}.syn .t b{color:var(--ink)}
+/* footer */
+.foot{margin-top:22px;font-size:12.5px;color:var(--ink-3);line-height:1.6;padding:0 6px}
+.foot b{color:var(--ink-2)}
+.tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:11px;background:var(--card);border:1px solid var(--line-2);
+  border-radius:20px;padding:4px 11px;color:var(--ink-2)}
+/* tooltip */
+#tip{position:fixed;z-index:99;pointer-events:none;background:var(--black);color:#fff;
+  font-size:12px;font-weight:500;padding:7px 11px;border-radius:9px;box-shadow:0 6px 20px rgba(0,0,0,.28);
+  opacity:0;transition:opacity .12s;max-width:260px;line-height:1.4}
+#tip .tv{font-family:"IBM Plex Mono",monospace;font-weight:700;color:var(--lime)}
+#totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;
+  background:var(--violet);color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 8px 24px rgba(108,76,255,.4);
+  opacity:0;pointer-events:none;transition:opacity .2s}
+#totop.show{opacity:1;pointer-events:auto}
+h3.mini{font-family:"Archivo";font-weight:700;font-size:15px;margin:22px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+.grid2 .panel{margin-top:0}
+.warn{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;background:var(--lime);
+  color:var(--lime-ink);border-radius:20px;padding:2px 9px;margin-left:6px;vertical-align:middle}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<div id="tip"></div>
+<button id="totop" aria-label="Volver arriba">↑</button>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">Historiografía de la literatura · lectura de datos</div>
+  <h1>La agenda de <em>Literary Cultures of Latin America</em></h1>
+  <div class="subt">The working agenda of a comparative literary history · 1994–2004</div>
+  <p>Qué eligió estudiar —y qué relegó a los márgenes— la historia comparada dirigida por Mario J. Valdés y Djelal Kadir. Una lectura estadística y bilingüe de su índice, concebida como insumo de discusión para el seminario.</p>
+  <div class="meta">
+    <b>Obra / Work:</b> Valdés, M. J. &amp; Kadir, D. (eds.), <i>Literary Cultures of Latin America: A Comparative History</i>. Oxford University Press, 2004. 3 vols.<br>
+    <b>Proyecto / Project:</b> 1994–2004 · 27 coordinadores de investigación · financiado por la Rockefeller Foundation y el SSHRC de Canadá.
+  </div>
+</header>
+
+<div class="kpis" id="kpis"></div>
+
+<!-- COMO LEER -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">i</div>
+    <div class="tt">
+      <h2>Cómo leer este reporte</h2>
+      <div class="en">How to read this report</div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Lo que sigue no descansa sobre una muestra sino sobre el <strong>censo íntegro</strong> de la obra: los 176 capítulos y documentos que componen sus tres volúmenes (las introducciones firmadas y el aparato crítico se excluyen del cómputo). Esta condición censal tiene una consecuencia metodológica precisa: los porcentajes no son estimaciones sujetas a error muestral, sino la descripción exacta de una decisión editorial ya consumada. No inferimos hacia una población mayor; interrogamos una arquitectura cerrada.</p>
+    <p>Tres de los ejes que cruzamos —<strong>región</strong>, <strong>tema</strong> y <strong>periodo</strong>— no figuran como tales en el libro: son una codificación analítica que propusimos para volver comparables las 205 entradas del índice. Son, por tanto, hipótesis de lectura revisables, no datos del original. Cada categoría aparece <strong>en español y en inglés</strong>: los títulos de partes y capítulos se ofrecen en su lengua de publicación (el inglés) seguidos de una traducción filológica al español; las etiquetas analíticas se enuncian en español con su equivalente inglés. Cuando una medida estadística se vuelva técnica, se explica en una línea a pie de figura.</p>
+  </div>
+</section>
+
+<!-- 01 ARQUITECTURA -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">01</div>
+    <div class="tt"><h2>La arquitectura: tres tomos, diez partes</h2><div class="en">The architecture: three volumes, ten parts</div></div>
+    <a class="arrow" href="#top" aria-label="Arriba">↗</a>
+  </div>
+  <p class="lead">La obra no se ordena por naciones ni por siglos, sino por tres <b>preguntas</b>: cómo se configura una cultura literaria (I), qué instituciones y modelos la sostienen (II) y cómo el sujeto histórico la atraviesa y la disputa (III).</p>
+  <div class="panel">
+    <div class="ptitle">Capítulos y documentos por parte · Chapters and documents by part</div>
+    <div class="pnote">Cada barra es una de las 10 partes; el color indica el volumen. / Each bar is one of the 10 parts; color marks the volume.</div>
+    <div class="legend" id="leg-vol"></div>
+    <div class="bars" id="fig-parte"></div>
+  </div>
+  <div class="prose">
+    <p>El reparto entre volúmenes es deliberadamente parejo (65 / 57 / 54 textos), lo que revela una voluntad de equilibrio editorial poco frecuente en obras colectivas de esta escala. Dentro de esa simetría, sin embargo, emergen <strong>partes-ancla</strong> que concentran el esfuerzo: <em>Los centros culturales de América Latina</em> (V2·P3, 26 textos), <em>La pluralidad del discurso</em> (V1·P3, 25) y <em>Fronteras internas: conflictos culturales y discurso de Estado</em> (V3·P2, 23). El propio dispositivo de partes y secciones materializa el programa que Mario Valdés formuló en su ponencia fundacional de 1994, "Rethinking Literary History": sustituir la historia literaria nacional, lineal y centrada en el canon, por una historia de las <em>culturas</em> literarias, plural y atenta a las condiciones de producción.</p>
+    <p>La parte más breve resulta significativa: <em>Cimientos fisurados: nostalgia y nuevos comienzos</em> (V3·P1, apenas 8 textos) abre el tercer volumen en registro programático y ensayístico antes que empírico. La asimetría no es un descuido sino una declaración: el tomo dedicado al sujeto histórico prefiere pensar sus categorías —melancolía, pérdida, fundación— antes de desplegar sus casos. La estructura, en suma, distribuye el trabajo por <strong>función historiográfica</strong> y no por cronología ni por geografía, y esa es ya la primera decisión de la agenda.</p>
+  </div>
+</section>
+
+<!-- 02 GEOGRAFIA -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">02</div>
+    <div class="tt"><h2>El mapa geográfico: un Atlántico luso-hispano</h2><div class="en">The geographic map: a Luso-Hispanic Atlantic</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">¿Sobre qué territorios habla la obra? La respuesta define el alcance real de su ambición comparada.</p>
+  <div class="panel">
+    <div class="ptitle">Foco geográfico de cada texto · Geographic focus of each text</div>
+    <div class="pnote">176 textos. "Pan-latinoamericano" = ensayos de alcance continental, sin país único. / Pan-Latin American = continental essays with no single country.</div>
+    <div class="bars" id="fig-region"></div>
+  </div>
+  <div class="callout" id="co-brasil"></div>
+  <div class="panel">
+    <div class="ptitle">Eje estructural · Structural axis: Brasil / Hispanoamérica / Transversal</div>
+    <div class="pnote">La misma información reducida a la tensión que organiza el proyecto. / The same data reduced to the tension that organizes the project.</div>
+    <div class="donutwrap"><svg class="donut" id="donut-eje" width="188" height="188" viewBox="0 0 188 188" role="img" aria-label="Distribución por eje estructural"></svg><div class="dlegend" id="leg-eje"></div></div>
+  </div>
+  <div class="prose">
+    <p>Dos rasgos definen la agenda geográfica y ambos son deliberados. El primero es la <strong>integración plena de Brasil</strong>. Con 46 textos —el 26% del corpus— la producción luso-brasileña pesa más que la de cualquier país hispanoamericano considerado por separado. La obra se piensa, literalmente, en clave <em>latinoamericana</em> y no <em>hispanoamericana</em>: rompe con la partición lingüística que había mantenido a Brasil como un objeto aparte y lo instala como interlocutor constante. Esta decisión materializa la crítica de Antonio Cornejo Polar a las historias literarias homogéneas y responde a que buena parte de los coordinadores del proyecto provenían de universidades brasileñas.</p>
+    <p>El segundo rasgo es la <strong>vocación continental</strong>: el 41% de los textos no trata un lugar sino un problema de alcance latinoamericano (la categoría "pan-latinoamericano" reúne 61 capítulos). Aquí se cifra el sentido fuerte del adjetivo "comparative" del subtítulo. La historia que proponen Valdés y Kadir no es una suma de historias nacionales yuxtapuestas, sino un ejercicio en el que la unidad de análisis se desplaza del Estado-nación hacia procesos transregionales: la transculturación, la modernidad, la ciudad letrada. Los casos nacionales —Andes (13), México (11)— existen, pero orbitan alrededor de un discurso teórico enunciado desde una escala superior.</p>
+  </div>
+</section>
+
+<!-- 03 TEMAS -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">03</div>
+    <div class="tt"><h2>El corazón conceptual: qué temas dominan</h2><div class="en">The conceptual core: which themes dominate</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">Reagrupamos los 102 descriptores finos en 20 macro-temas para poder verlos. El ranking revela dónde deposita el proyecto su energía interpretativa.</p>
+  <div class="panel">
+    <div class="ptitle">Temas por número de textos · Themes by number of texts</div>
+    <div class="pnote">Barra destacada = tema más frecuente. / Highlighted bar = most frequent theme.</div>
+    <div class="bars" id="fig-tema"></div>
+  </div>
+  <div class="prose">
+    <p>El vértice temático no es un género ni un autor canónico: son las <strong>ciudades y centros culturales</strong> (26 textos) y el complejo <strong>nación–modernidad–transculturación</strong> (22). La obra piensa la literatura, ante todo, como <em>geografía cultural</em> y como <em>proceso de formación de identidades</em>. El vocabulario es reconociblemente el de Ángel Rama —la ciudad letrada como matriz del poder simbólico, la transculturación narrativa como operación productiva— y el de la crítica de la modernidad periférica. La literatura aparece menos como serie de obras que como práctica social inscrita en instituciones, territorios y públicos.</p>
+    <p>El tercer y cuarto lugar los comparten lo <strong>colonial-barroco</strong> (13) y los <strong>géneros y modelos literarios</strong> (13): la obra no abandona la historia de las formas, pero la subordina a la pregunta por las condiciones culturales. En el extremo opuesto, la escasez es igual de elocuente: el <strong>cine y lo audiovisual</strong> reciben un solo texto y el discurso científico-religioso apenas dos. La agenda de 2004 todavía concibe la "cultura literaria" en un horizonte predominantemente escrito y letrado; el giro hacia lo visual y lo mediático, que hoy resulta ineludible, asoma solo en los márgenes. Esa ausencia es uno de los límites de época que conviene discutir.</p>
+  </div>
+</section>
+
+<!-- 04 TEMA x VOLUMEN -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">04</div>
+    <div class="tt"><h2>Cada tomo tiene su lente</h2><div class="en">Each volume has its lens</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">Este cruce pone a prueba la lógica editorial: si los tres volúmenes son de veras tres preguntas distintas, cada tema debería concentrarse en uno.</p>
+  <div class="panel">
+    <div class="ptitle">Distribución de cada tema entre los tres volúmenes · Each theme across the three volumes</div>
+    <div class="pnote">Cada fila es un tema; el ancho total refleja su frecuencia y el color, el reparto por tomo. / Row width = frequency; color = split by volume.</div>
+    <div class="legend" id="leg-vol2"></div>
+    <div id="fig-tema-vol"></div>
+  </div>
+  <div class="prose">
+    <p>La separación es casi quirúrgica y confirma que la partición en tres tomos es funcional, no nominal. El <strong>Tomo I</strong> monopoliza la oralidad, la cultura popular, el género, las lenguas y el mundo indígena: la <em>configuración</em> de una cultura literaria observada desde abajo y desde sus bordes. El <strong>Tomo II</strong> concentra las ciudades, las instituciones, la prensa y la traducción: la <em>infraestructura</em> material y simbólica que hace posible la vida literaria —bibliotecas, museos, editoriales, revistas—. El <strong>Tomo III</strong> reúne el exilio, la historiografía y lo colonial releído: el <em>sujeto</em> histórico enfrentado al Estado, la nación y la memoria.</p>
+    <p>Que un tema como "ciudades y centros culturales" resida por completo en un único volumen, o que "exilio, dictadura y política" solo aparezca en el tercero, demuestra que el índice fue diseñado para que las categorías no se solapen. Esta economía tiene una virtud —la coherencia del argumento global— y un costo —la fragmentación del objeto—: quien quiera seguir, por ejemplo, la cuestión indígena a través de las instituciones no la hallará, porque cada asunto quedó asignado a la pregunta que le corresponde. La arquitectura, de nuevo, es una tesis sobre cómo debe escribirse una historia literaria.</p>
+  </div>
+</section>
+
+<!-- 05 TIEMPO -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">05</div>
+    <div class="tt"><h2>El tiempo: una obra más presentista que arqueológica</h2><div class="en">Time: a work more presentist than archaeological</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">¿A qué época mira cada texto? Ordenamos los periodos del pasado remoto hacia el presente.</p>
+  <div class="panel">
+    <div class="ptitle">Foco temporal de los textos · Temporal focus of the texts</div>
+    <div class="pnote">"Transversal" = ensayos que recorren varias épocas sin anclarse en una. / Cross-period = essays spanning several eras.</div>
+    <div class="bars" id="fig-siglo"></div>
+  </div>
+  <div class="prose">
+    <p>Dominan dos registros temporales. El primero es lo <strong>transversal</strong> (73 textos que atraviesan siglos sin fijarse en uno), coherente con una obra que privilegia el proceso de larga duración sobre el corte de época. El segundo es el <strong>siglo XX</strong> (54), lo que confirma una orientación decididamente <strong>modernocéntrica</strong>: la colonia funciona como origen y punto de partida, y el siglo XX como destino y clave interpretativa. Lo colonial mantiene un bloque sólido (23 textos), pero el siglo XIX rara vez es objeto en sí mismo; comparece más bien como bisagra, en la banda mixta "siglos XIX–XX" (14).</p>
+    <p>La ausencia más notoria es lo <strong>prehispánico</strong>, con un único texto. La decisión es consistente con el marco conceptual del proyecto —que arranca la "cultura literaria" latinoamericana en el contacto colonial y en la letra— pero deja fuera del relato central las literaturas amerindias anteriores a la conquista, que quedan confinadas a los capítulos sobre oralidad y lenguas. Para un seminario de historiografía, este dato abre una pregunta productiva: ¿dónde empieza, para esta obra, la historia de la literatura latinoamericana, y qué supone políticamente fijar ese comienzo en la escritura y no en la oralidad prehispánica?</p>
+  </div>
+</section>
+
+<!-- 06 TEMA x SIGLO -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">06</div>
+    <div class="tt"><h2>La firma temporal de cada tema</h2><div class="en">The temporal signature of each theme</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">Cruzar tema y periodo muestra <em>cómo</em> se historiza cada asunto. En este mapa de calor, cuanto más intensa la celda, más textos la ocupan.</p>
+  <div class="panel">
+    <div class="ptitle">Mapa de calor tema × periodo · Heatmap theme × period</div>
+    <div class="pnote">Lea por filas: dónde se concentra en el tiempo cada tema. / Read by rows: where each theme clusters in time.</div>
+    <div class="hmwrap"><table class="hm" id="hm-tema-siglo"></table></div>
+    <div class="hmleg" id="hmleg1"></div>
+  </div>
+  <div class="prose">
+    <p>El mapa deja ver "firmas" temporales nítidas. Lo <strong>colonial-barroco</strong> forma un bloque compacto y exclusivo en la colonia: es el único tema que rechaza la transversalidad, tratado como una época cerrada con su propia lógica estética. En el polo contrario, el <strong>exilio y la dictadura</strong> son pura contemporaneidad —enteramente siglo XX—, lo que inscribe la experiencia de las dictaduras del Cono Sur y sus diásporas en el corazón del tercer volumen.</p>
+    <p>Un segundo patrón es la <strong>transversalidad de los temas de larga duración</strong>: las ciudades, la oralidad, la geografía y las lenguas se narran como continuidades que desbordan cualquier siglo, coherente con una historia cultural que rastrea permanencias más que rupturas. Por último, el complejo <strong>nación–modernidad–transculturación</strong> es el que mejor se reparte entre el XIX y el XX: precisamente por ser el gran relato articulador de la obra, necesita cubrir el arco que va de la Independencia a la modernización, el tramo en que —según la tesis implícita del proyecto— se forjan las identidades culturales latinoamericanas.</p>
+  </div>
+</section>
+
+<!-- 07 ATLAS -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">07</div>
+    <div class="tt"><h2>El atlas: región × tema</h2><div class="en">The atlas: region × theme</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">El cruce más informativo del conjunto. ¿Con qué lente se estudia cada región del continente?</p>
+  <div class="panel">
+    <div class="ptitle">Mapa de calor tema × región · Heatmap theme × region</div>
+    <div class="pnote">Filas = temas; columnas = regiones. Celdas intensas = más textos. / Rows = themes; columns = regions.</div>
+    <div class="hmwrap"><table class="hm" id="hm-atlas"></table></div>
+    <div class="hmleg" id="hmleg2"></div>
+  </div>
+  <div class="prose">
+    <p>El atlas revela una <strong>división del trabajo regional</strong> muy marcada, en la que cada territorio comparece asociado a una lente privilegiada. A <strong>Brasil</strong> se lo estudia sobre todo por sus <em>instituciones, ciudades, prensa y géneros</em>: la mirada infraestructural del segundo tomo tiene, de hecho, acento brasileño. A los <strong>Andes</strong> y a <strong>México</strong> se los aborda ante todo por su <em>mundo indígena y su diversidad de lenguas</em>, lo que reproduce —y a la vez consagra— la asociación historiográfica entre lo andino-mesoamericano y lo indígena. A <strong>Estados Unidos (Latino)</strong> se lo lee casi exclusivamente a través del <em>teatro chicano y la literatura latina</em>.</p>
+    <p>El hallazgo de fondo es de orden epistemológico. Los grandes temas conceptuales —nación, géneros literarios, lo colonial, la historiografía— se concentran en la fila <strong>pan-latinoamericana</strong>: la teoría se enuncia "desde arriba", en una escala continental y sin territorio. Los casos empíricos, en cambio, descienden a regiones concretas con especializaciones fijas. Esta arquitectura tiene una consecuencia que vale la pena discutir: al asignar a cada región su tema "propio", la obra corre el riesgo de naturalizar ciertas ecuaciones (Andes = indígena, Brasil = institución, Caribe = ciudad) y de dejar poco espacio para, por ejemplo, un México pensado desde sus instituciones o unos Andes leídos desde su modernidad.</p>
+  </div>
+</section>
+
+<!-- 08 ALTERIDAD -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">08</div>
+    <div class="tt"><h2>Los márgenes tienen domicilio: el Tomo I</h2><div class="en">The margins have an address: Volume I</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">La obra hizo de la alteridad una bandera programática. Pero, ¿dónde vive esa agenda dentro de la estructura?</p>
+  <div class="panel">
+    <div class="ptitle">Textos sobre sujetos de alteridad / minorías, por volumen · Alterity texts by volume</div>
+    <div class="pnote">Alteridad = mundo indígena, afrodescendencia, género y sexualidad, minorías judías, clase, diáspora.</div>
+    <div class="bars" id="fig-alt-vol"></div>
+  </div>
+  <div class="panel">
+    <div class="ptitle">Tipos de alteridad abordados · Types of alterity addressed</div>
+    <div class="bars" id="fig-alt-tipo"></div>
+  </div>
+  <div class="prose">
+    <p>Aquí aparece uno de los hallazgos más provocadores para la discusión. La agenda de "los márgenes" está <strong>fuertemente concentrada en el Tomo I</strong>: 21 de sus 65 textos —casi un tercio— abordan sujetos de alteridad. En el Tomo III reaparece con fuerza moderada (8 textos), pero en el <strong>Tomo II es literalmente inexistente: cero</strong>. Es decir, en el preciso momento en que la obra examina las <em>instituciones, las ciudades y el mercado del libro</em>, los sujetos subalternos —mujeres, indígenas, afrodescendientes, disidencias sexuales— se vuelven invisibles.</p>
+    <p>El dato admite dos lecturas complementarias, y ambas son fértiles para un seminario. La primera es celebratoria: la incorporación programática de la alteridad, coherente con la agenda posestructuralista y de estudios subalternos de los años noventa, constituye una de las grandes rupturas de esta historia respecto de sus predecesoras positivistas. La segunda es crítica: al confinar la alteridad al tomo de las "configuraciones" y borrarla del tomo "institucional", el índice sugiere, quizá sin proponérselo, que la infraestructura cultural es un espacio neutro, sin género ni raza. El propio orden del libro deja abierta la pregunta de si las instituciones latinoamericanas pueden pensarse sin sus exclusiones constitutivas.</p>
+  </div>
+</section>
+
+<!-- 09 CONCENTRACION -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">09</div>
+    <div class="tt"><h2>Concentración y autoría: cómo se repartió el esfuerzo</h2><div class="en">Concentration and authorship</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">Dos medidas de síntesis. El <em>coeficiente de Gini</em> resume en un número cuán desigual es un reparto: 0 significa distribución perfectamente equitativa; 1, que todo se acumula en una sola categoría.</p>
+  <div class="kpis" id="kpis2"></div>
+  <div class="panel">
+    <div class="ptitle">Autoría colectiva (2+ firmantes) según eje · Co-authorship by axis</div>
+    <div class="pnote">Proporción de capítulos firmados por más de una persona. / Share of chapters with more than one author.</div>
+    <div class="bars" id="fig-coaut"></div>
+  </div>
+  <div class="prose">
+    <p>Las dos dimensiones se comportan de manera opuesta y ese contraste es revelador. La atención <strong>geográfica está concentrada</strong> (Gini = 0,54): un puñado de regiones —lo pan-latinoamericano y Brasil— acapara la mayor parte del corpus, mientras la periferia de la periferia (Centroamérica, Amazonía, el Caribe insular) recibe una fracción menor. La atención <strong>temática, en cambio, está mucho mejor repartida</strong> (Gini = 0,37): la obra sí cumple su promesa de abrir un abanico amplio de asuntos, sin que ninguno monopolice el conjunto. El desequilibrio, entonces, es geográfico antes que temático.</p>
+    <p>La autoría añade un matiz sociológico sobre el modo de producción del proyecto. La <strong>escritura colectiva es más frecuente en los capítulos brasileños</strong> (15%) que en los hispanoamericanos (10%) o los transversales (7%). El caso extremo —un capítulo del tercer tomo firmado por diez investigadores— procede justamente de un equipo brasileño. El dato refleja la organización en red de la academia que coordinó buena parte de la obra y confirma que <em>Literary Cultures</em> fue, antes que una suma de autorías individuales, una empresa colaborativa de una década, con reuniones en Bellagio, Toronto, Duke, Bogotá, San Luis, París y Río de Janeiro.</p>
+  </div>
+</section>
+
+<!-- 10 EXTENSION -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">10</div>
+    <div class="tt"><h2>Peso real: los ensayos que anclan el Tomo I</h2><div class="en">Real weight: the essays anchoring Volume I</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">Contar capítulos equipara un documento de una página con un ensayo de fondo. Solo el Tomo I trae paginación en el índice: al medir su <em>extensión</em> vemos qué textos cargan el peso argumental.</p>
+  <div class="panel">
+    <div class="ptitle">Capítulos más extensos del Tomo I (páginas estimadas) · Longest chapters of Vol. I</div>
+    <div class="pnote">Estimación por diferencia entre páginas de inicio consecutivas. / Estimated from consecutive start pages.</div>
+    <div class="bars" id="fig-ext"></div>
+  </div>
+  <div class="prose">
+    <p>Ponderar por extensión reordena la jerarquía que el simple conteo oculta. Los pilares del primer volumen no son documentos breves sino <strong>grandes síntesis de autor</strong>: la historia de la literatura oral en México (24 pp.), la <em>Historia social del escritor latinoamericano</em> del propio Valdés (23 pp.) —pieza teórica que fija el marco de toda la obra—, la cultura literaria del virreinato del Perú de Luis Millones (22 pp.) y el ensayo de Carlos Monsiváis sobre la cultura popular mexicana (22 pp.). En el extremo inferior quedan los "documentos" —textos en tzotzil o zapoteco de una o dos páginas— cuya función no es argumentar sino <em>mostrar</em>, incorporando la voz primaria al cuerpo de la historia.</p>
+    <p>La lección metodológica es general: el conteo de capítulos, útil para el mapa grueso, subestima el relieve real de una obra. Cuando la paginación lo permite, ponderar por extensión devuelve el énfasis a donde el proyecto lo puso —la teoría y las grandes síntesis regionales— y recuerda que no todas las entradas del índice pesan lo mismo en la economía argumental del libro.</p>
+  </div>
+</section>
+
+<!-- 11 MAS EJES -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">11</div>
+    <div class="tt"><h2>Más ejes de la agenda</h2><div class="en">More axes of the agenda</div></div>
+    <a class="arrow" href="#top">↗</a>
+  </div>
+  <p class="lead">Cinco lecturas adicionales, derivadas de la misma base: el perfil <b>disciplinar</b>, la <b>escala</b> geográfica, el <b>formato</b> de los textos, el tipo de <b>autoría</b> y la <b>lengua</b> original probable de cada capítulo.</p>
+  <div class="grid2">
+    <div class="panel">
+      <div class="ptitle">Enfoque disciplinar · Disciplinary approach</div>
+      <div class="pnote">¿Desde qué disciplina se escribe cada texto? / From which discipline is each text written?</div>
+      <div class="bars" id="fig-enfoque"></div>
+    </div>
+    <div class="panel">
+      <div class="ptitle">Escala geográfica · Geographic scale</div>
+      <div class="pnote">De lo local a lo transnacional. / From local to transnational.</div>
+      <div class="bars" id="fig-escala"></div>
+    </div>
+    <div class="panel">
+      <div class="ptitle">Formato del texto · Text format</div>
+      <div class="pnote">Síntesis panorámica, estudio de caso o documento primario.</div>
+      <div class="bars" id="fig-formato"></div>
+    </div>
+    <div class="panel">
+      <div class="ptitle">Tipo de autoría · Authorship</div>
+      <div class="pnote">Individual, en coautoría o colectiva. / Single, co-authored or collective.</div>
+      <div class="bars" id="fig-autoria"></div>
+    </div>
+    <div class="panel" style="grid-column:1/-1">
+      <div class="ptitle">Ámbito lingüístico probable · Likely original language <span class="warn">baja fiabilidad / low reliability</span></div>
+      <div class="pnote">Estimación según la región del texto, no dato del original. / Estimated from the text's region, not from the source.</div>
+      <div class="bars" id="fig-ambito"></div>
+    </div>
+  </div>
+  <div class="prose">
+    <p>El perfil disciplinar confirma la naturaleza híbrida del proyecto: aunque casi la mitad de los textos (86) se escriben desde la <strong>crítica e historia literaria</strong>, la otra mitad procede de la <strong>historia cultural e institucional</strong> (47), la <strong>antropología</strong>, la <strong>lingüística</strong> y las <strong>artes escénicas</strong>. <em>Literary Cultures</em> no es una historia de la literatura escrita solo por críticos literarios, sino una empresa deliberadamente interdisciplinaria, coherente con la ambición de Valdés de pensar "culturas" y no solo "textos".</p>
+    <p>La <strong>escala geográfica</strong> refina el hallazgo de la sección 02: el registro pan-latinoamericano (69 textos) y el nacional (50) son los dos modos dominantes, con un bloque de estudios urbanos (23) y una presencia menor pero significativa de lo transnacional y diaspórico (12). El <strong>formato</strong> revela una obra construida sobre <strong>estudios de caso</strong> (158) más que sobre grandes panorámicas (12): la síntesis se reserva a las introducciones y a unas pocas piezas teóricas. Y el tipo de <strong>autoría</strong> —90% individual— matiza el carácter colectivo del proyecto: fue colaborativo en su coordinación y sus reuniones, pero la firma siguió siendo mayoritariamente individual.</p>
+    <p>Una lectura final, esta con cautela por su carácter estimado. Si ordenamos los temas por su <strong>centroide temporal</strong> (el "peso" promedio de época de cada asunto, en una escala donde 2 = colonial y 5 = siglo XXI), lo <em>colonial-barroco</em> ancla el extremo antiguo (2,0), mientras que la <em>historiografía y la teoría</em> (4,2), el <em>exilio</em> (4,0) y la <em>literatura latina en EE.UU.</em> (4,0) ocupan el polo contemporáneo. El gradiente dibuja, en una sola cifra por tema, el arco que la obra recorre desde la fundación colonial hasta la autoconciencia crítica del presente.</p>
+  </div>
+</section>
+
+<!-- GLOSARIO -->
+<section class="card">
+  <div class="chead">
+    <div class="cnum">ES<br>EN</div>
+    <div class="tt"><h2>Glosario bilingüe de categorías</h2><div class="en">Bilingual glossary of analytical categories</div></div>
+  </div>
+  <p class="lead">Las etiquetas analíticas que usamos en las figuras, con su equivalente en inglés. Traducción con criterio filológico; conserva los términos técnicos de la crítica latinoamericana.</p>
+  <div class="gcols" id="glosario"></div>
+</section>
+
+<!-- SINTESIS -->
+<section class="card" style="background:linear-gradient(135deg,var(--card),var(--violet-soft))">
+  <div class="chead">
+    <div class="cnum" style="background:var(--violet);color:#fff">∑</div>
+    <div class="tt"><h2>Síntesis: siete rasgos de esta agenda</h2><div class="en">Synthesis: seven traits of this agenda</div></div>
+  </div>
+  <div class="syn" id="syn"></div>
+  <div class="callout" style="background:var(--card)"><b>Para la discusión / For discussion:</b> ¿con qué eje se identifican ustedes —región, periodo, tema— y qué <em>ausencias</em> del índice (lo prehispánico, la alteridad en las instituciones, el siglo XIX como objeto propio, lo audiovisual) leerían hoy como límites de la coyuntura de 2004 o como decisiones deliberadas del proyecto?</div>
+</section>
+
+<div class="foot">
+  <p><b>Fuente y método / Source & method.</b> Datos extraídos del índice de la obra (OCR + reconstrucción manual de la jerarquía volumen › parte › sección › capítulo) y verificados con quien elaboró este reporte. N = 176 capítulos y documentos. Las variables región, tema, periodo y sus derivados son codificación analítica propuesta, no datos del original; el ámbito lingüístico es una estimación de baja fiabilidad. La base completa (27 variables) está disponible en <span class="mono">Literary_Cultures_LA_base_de_datos.xlsx / .csv</span>.</p>
+  <div class="tags">
+    <span class="tag">3 volúmenes</span><span class="tag">10 partes</span><span class="tag">176 textos</span><span class="tag">1994–2004</span><span class="tag">Oxford UP, 2004</span><span class="tag">ES · EN</span>
+  </div>
+</div>
+
+</div><!--wrap-->
+
+<script>
+const D = {"N": 176, "por_volumen": [["I. Configurations of Literary Culture", 65], ["II. Institutional Modes and Cultural Modalities", 57], ["III. Subject to History", 54]], "por_parte": [["V1·P1: Parameters of Literary Culture", 21], ["V1·P2: From the Margins of Literary History", 19], ["V1·P3: Plurality of Discourse in Latin American Culture", 25], ["V2·P1: Cultural Institutions", 18], ["V2·P2: Textual Models and Their Transformations", 13], ["V2·P3: The Cultural Centers of Latin America", 26], ["V3·P1: Fissured Foundations: Nostalgia and New Beginnings", 8], ["V3·P2: Internal Borders: Cultural Conflicts and State Discourse", 23], ["V3·P3: Liminality and Centrality of Literary Cultures in the Twentieth Century", 9], ["V3·P4: Literary Culture in the Twentieth Century", 14]], "macro_region": [["Pan-latinoamericano", 61], ["Brasil", 46], ["Andes", 13], ["Mexico", 11], ["Hispanoamerica (transnac.)", 9], ["Cono Sur", 8], ["EE.UU. (Latino)", 8], ["Multirregional (2+ areas)", 6], ["Caribe", 6], ["Amazonia", 4], ["Centroamerica", 3], ["Europa", 1]], "eje_brasil": [["Transversal", 72], ["Hispanoamerica", 58], ["Brasil", 46]], "macro_tema": [["Ciudades y centros culturales", 26], ["Nacion, modernidad y transculturacion", 22], ["Colonial, barroco e Ilustracion", 13], ["Generos y modelos literarios", 13], ["Oralidad, cultura popular y medios", 12], ["Instituciones, libro y educacion", 11], ["Genero y sexualidad", 10], ["Prensa, critica y traduccion", 10], ["Lenguas y linguistica", 8], ["Teatro y artes escenicas", 8], ["Mundo indigena", 7], ["Exilio, dictadura y politica", 7], ["Geografia y territorio", 6], ["Historiografia, teoria y estetica", 6], ["Afrodescendencia", 5], ["Literatura latina en EE.UU.", 4], ["Otras alteridades (judia, clase)", 3], ["Autoria, lectura y publico", 2], ["Discurso religioso y cientifico", 2], ["Cine y audiovisual", 1]], "enfoque": [["Critica e historia literaria", 86], ["Historia cultural e institucional", 47], ["Antropologia cultural / est. culturales", 12], ["Linguistica", 8], ["Artes escenicas", 8], ["Geografia cultural", 6], ["Teoria e historiografia", 6], ["Historia intelectual", 2], ["Cine y medios", 1]], "autoria": [["Individual", 158], ["Coautoria (2-3)", 16], ["Colectivo (4+)", 2]], "siglo": [["Prehispanico", 1], ["Colonial", 23], ["Siglo XIX", 9], ["Siglos XIX-XX", 14], ["Siglo XX", 54], ["Siglo XXI", 1], ["Transversal", 73]], "tipo_alteridad": [["Genero y sexualidad", 10], ["Etnico-racial (indigena)", 7], ["Etnico-racial (afro)", 5], ["Migratorio / diasporico", 4], ["Etnico-religioso (judia)", 2], ["Socioeconomico", 1]], "alteridad_volumen": [["I. Configurations of Literary Culture", 21, 65], ["II. Institutional Modes and Cultural Modalities", 0, 57], ["III. Subject to History", 8, 54]], "tema_volumen": {"temas": ["Ciudades y centros culturales", "Nacion, modernidad y transculturacion", "Colonial, barroco e Ilustracion", "Generos y modelos literarios", "Oralidad, cultura popular y medios", "Instituciones, libro y educacion", "Genero y sexualidad", "Prensa, critica y traduccion", "Lenguas y linguistica", "Teatro y artes escenicas", "Mundo indigena", "Exilio, dictadura y politica", "Geografia y territorio", "Historiografia, teoria y estetica", "Afrodescendencia", "Literatura latina en EE.UU.", "Otras alteridades (judia, clase)", "Autoria, lectura y publico", "Discurso religioso y cientifico", "Cine y audiovisual"], "matrix": [[0, 26, 0], [4, 0, 18], [4, 0, 9], [0, 12, 1], [12, 0, 0], [0, 10, 1], [10, 0, 0], [0, 9, 1], [8, 0, 0], [5, 0, 3], [4, 0, 3], [0, 0, 7], [6, 0, 0], [0, 0, 6], [4, 0, 1], [0, 0, 4], [3, 0, 0], [2, 0, 0], [2, 0, 0], [1, 0, 0]]}, "tema_siglo": {"temas": ["Ciudades y centros culturales", "Nacion, modernidad y transculturacion", "Colonial, barroco e Ilustracion", "Generos y modelos literarios", "Oralidad, cultura popular y medios", "Instituciones, libro y educacion", "Genero y sexualidad", "Prensa, critica y traduccion", "Lenguas y linguistica", "Teatro y artes escenicas", "Mundo indigena", "Exilio, dictadura y politica", "Geografia y territorio", "Historiografia, teoria y estetica", "Afrodescendencia", "Literatura latina en EE.UU.", "Otras alteridades (judia, clase)", "Autoria, lectura y publico", "Discurso religioso y cientifico", "Cine y audiovisual"], "siglos": ["Prehispanico", "Colonial", "Siglo XIX", "Siglos XIX-XX", "Siglo XX", "Siglo XXI", "Transversal"], "matrix": [[0, 0, 0, 1, 2, 0, 23], [0, 2, 4, 10, 6, 0, 0], [0, 13, 0, 0, 0, 0, 0], [0, 1, 2, 0, 4, 0, 6], [0, 0, 0, 0, 4, 0, 8], [0, 2, 1, 0, 3, 0, 5], [0, 3, 0, 1, 4, 0, 2], [0, 0, 1, 2, 5, 0, 2], [0, 0, 0, 0, 2, 0, 6], [1, 0, 1, 0, 5, 0, 1], [0, 1, 0, 0, 1, 0, 5], [0, 0, 0, 0, 7, 0, 0], [0, 0, 0, 0, 0, 0, 6], [0, 0, 0, 0, 4, 1, 1], [0, 0, 0, 0, 1, 0, 3], [0, 0, 0, 0, 4, 0, 0], [0, 0, 0, 0, 1, 0, 2], [0, 1, 0, 0, 0, 0, 1], [0, 0, 0, 0, 0, 0, 2], [0, 0, 0, 0, 1, 0, 0]]}, "atlas": {"regiones": ["Pan-latinoamericano", "Brasil", "Andes", "Mexico", "Hispanoamerica (transnac.)", "Cono Sur", "EE.UU. (Latino)", "Multirregional (2+ areas)", "Caribe", "Amazonia", "Centroamerica", "Europa"], "temas": ["Ciudades y centros culturales", "Nacion, modernidad y transculturacion", "Colonial, barroco e Ilustracion", "Generos y modelos literarios", "Oralidad, cultura popular y medios", "Instituciones, libro y educacion", "Genero y sexualidad", "Prensa, critica y traduccion", "Lenguas y linguistica", "Teatro y artes escenicas", "Mundo indigena", "Exilio, dictadura y politica", "Geografia y territorio", "Historiografia, teoria y estetica", "Afrodescendencia", "Literatura latina en EE.UU.", "Otras alteridades (judia, clase)", "Autoria, lectura y publico", "Discurso religioso y cientifico", "Cine y audiovisual"], "matrix": [[0, 14, 6, 9, 4, 3, 5, 3, 1, 2, 0, 2, 1, 4, 3, 0, 1, 2, 0, 1], [6, 2, 1, 3, 4, 7, 4, 6, 1, 2, 1, 2, 1, 2, 1, 0, 1, 0, 2, 0], [5, 0, 1, 0, 1, 0, 0, 0, 2, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 1, 2, 1, 2, 0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 3, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0], [4, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0], [1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0], [3, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0], [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]}, "coautoria_brasil": [["Brasil", 7, 46], ["Hispanoamerica", 6, 58], ["Transversal", 5, 72]], "conc": {"region_hhi": 0.208, "region_gini": 0.542, "tema_hhi": 0.075, "tema_gini": 0.37, "brasil_pct": 26.1}, "vol1_ext": [[24, "The History of Oral Literature in Mexico", "Oralidad, cultura popular y medios"], [23, "Social History of the Latin American Writer", "Autoria, lectura y publico"], [22, "Literary Culture during the Peruvian Viceroyalty", "Colonial, barroco e Ilustracion"], [22, "Laughing through One's Tears: Popular Culture in Mexico", "Oralidad, cultura popular y medios"], [18, "Black Presence in Brazilian Literature: From the Colonial Period to the Twentieth Century", "Afrodescendencia"], [18, "Bio-Policies Undergoing Transformation: Bodies and Ideas of American Identity", "Nacion, modernidad y transculturacion"], [17, "The Rhetoric of Citizenship in Modernity", "Nacion, modernidad y transculturacion"], [16, "Plurality and Diversity of Theater Discourse", "Teatro y artes escenicas"], [16, "Mass Culture and Literature in Latin America", "Oralidad, cultura popular y medios"], [16, "Literary Nationalism in Latin America", "Nacion, modernidad y transculturacion"]], "escala": [["Ciudad / local", 23], ["Nacional", 50], ["Subregional", 18], ["Multirregional", 4], ["Pan-latinoamericano", 69], ["Transnacional / Diaspora", 12]], "formato": [["Caso de estudio", 158], ["Panoramico / sintesis", 12], ["Documento primario", 6]], "ambito": [["Espanol (prob.)", 115], ["Portugues (prob.)", 50], ["Ingles/Espanol (prob.)", 10], ["Frances/Espanol (prob.)", 1]], "tema_centroide": [["Colonial, barroco e Ilustracion", 2.0, 13], ["Instituciones, libro y educacion", 3.17, 6], ["Genero y sexualidad", 3.19, 8], ["Nacion, modernidad y transculturacion", 3.41, 22], ["Teatro y artes escenicas", 3.43, 7], ["Generos y modelos literarios", 3.43, 7], ["Prensa, critica y traduccion", 3.75, 8], ["Ciudades y centros culturales", 3.83, 3], ["Oralidad, cultura popular y medios", 4.0, 4], ["Literatura latina en EE.UU.", 4.0, 4], ["Exilio, dictadura y politica", 4.0, 7], ["Historiografia, teoria y estetica", 4.2, 5]]};
+
+/* ---------- bilingual dictionaries ---------- */
+const BI = {
+ "Pan-latinoamericano":["Pan-latinoamericano","Pan-Latin American"],
+ "Brasil":["Brasil","Brazil"],"Andes":["Andes","Andes"],"Mexico":["México","Mexico"],
+ "Hispanoamerica (transnac.)":["Hispanoamérica (transnac.)","Spanish America (transnat.)"],
+ "Hispanoamerica":["Hispanoamérica","Spanish America"],
+ "Cono Sur":["Cono Sur","Southern Cone"],"EE.UU. (Latino)":["EE.UU. (Latino)","U.S. (Latino)"],
+ "Multirregional (2+ areas)":["Multirregional (2+ áreas)","Multiregional (2+ areas)"],
+ "Caribe":["Caribe","Caribbean"],"Amazonia":["Amazonía","Amazonia"],
+ "Centroamerica":["Centroamérica","Central America"],"Europa":["Europa","Europe"],"Transversal":["Transversal","Cross-regional"],
+ "Ciudades y centros culturales":["Ciudades y centros culturales","Cities and cultural centers"],
+ "Nacion, modernidad y transculturacion":["Nación, modernidad y transculturación","Nation, modernity and transculturation"],
+ "Colonial, barroco e Ilustracion":["Colonial, barroco e Ilustración","Colonial, Baroque and Enlightenment"],
+ "Generos y modelos literarios":["Géneros y modelos literarios","Literary genres and models"],
+ "Oralidad, cultura popular y medios":["Oralidad, cultura popular y medios","Orality, popular culture and media"],
+ "Instituciones, libro y educacion":["Instituciones, libro y educación","Institutions, book and education"],
+ "Genero y sexualidad":["Género y sexualidad","Gender and sexuality"],
+ "Prensa, critica y traduccion":["Prensa, crítica y traducción","Press, criticism and translation"],
+ "Lenguas y linguistica":["Lenguas y lingüística","Languages and linguistics"],
+ "Teatro y artes escenicas":["Teatro y artes escénicas","Theater and performing arts"],
+ "Mundo indigena":["Mundo indígena","Indigenous world"],
+ "Exilio, dictadura y politica":["Exilio, dictadura y política","Exile, dictatorship and politics"],
+ "Geografia y territorio":["Geografía y territorio","Geography and territory"],
+ "Historiografia, teoria y estetica":["Historiografía, teoría y estética","Historiography, theory and aesthetics"],
+ "Afrodescendencia":["Afrodescendencia","Afro-descendance"],
+ "Literatura latina en EE.UU.":["Literatura latina en EE.UU.","Latino literature in the U.S."],
+ "Otras alteridades (judia, clase)":["Otras alteridades (judía, clase)","Other alterities (Jewish, class)"],
+ "Autoria, lectura y publico":["Autoría, lectura y público","Authorship, reading and public"],
+ "Discurso religioso y cientifico":["Discurso religioso y científico","Religious and scientific discourse"],
+ "Cine y audiovisual":["Cine y audiovisual","Cinema and audiovisual"],
+ "Prehispanico":["Prehispánico","Pre-Hispanic"],"Colonial":["Colonial","Colonial"],
+ "Siglo XIX":["Siglo XIX","19th century"],"Siglos XIX-XX":["Siglos XIX–XX","19th–20th c."],
+ "Siglo XX":["Siglo XX","20th century"],"Siglo XXI":["Siglo XXI","21st century"],
+ "Etnico-racial (indigena)":["Étnico-racial (indígena)","Ethnic-racial (Indigenous)"],
+ "Etnico-racial (afro)":["Étnico-racial (afro)","Ethnic-racial (Afro)"],
+ "Migratorio / diasporico":["Migratorio / diaspórico","Migratory / diasporic"],
+ "Etnico-religioso (judia)":["Étnico-religioso (judía)","Ethnic-religious (Jewish)"],
+ "Socioeconomico":["Socioeconómico","Socioeconomic"],
+ "Individual":["Individual","Single author"],"Coautoria (2-3)":["Coautoría (2–3)","Co-authored (2–3)"],
+ "Colectivo (4+)":["Colectivo (4+)","Collective (4+)"],
+ "Critica e historia literaria":["Crítica e historia literaria","Literary criticism & history"],
+ "Historia cultural e institucional":["Historia cultural e institucional","Cultural & institutional history"],
+ "Antropologia cultural / est. culturales":["Antropología cultural","Cultural anthropology"],
+ "Linguistica":["Lingüística","Linguistics"],
+ "Artes escenicas":["Artes escénicas","Performing arts"],
+ "Geografia cultural":["Geografía cultural","Cultural geography"],
+ "Teoria e historiografia":["Teoría e historiografía","Theory & historiography"],
+ "Historia intelectual":["Historia intelectual","Intellectual history"],
+ "Cine y medios":["Cine y medios","Cinema & media"],
+ "Ciudad / local":["Ciudad / local","City / local"],
+ "Nacional":["Nacional","National"],
+ "Subregional":["Subregional","Subregional"],
+ "Multirregional":["Multirregional","Multiregional"],
+ "Transnacional / Diaspora":["Transnacional / diáspora","Transnational / diaspora"],
+ "Caso de estudio":["Caso de estudio","Case study"],
+ "Panoramico / sintesis":["Panorámico / síntesis","Overview / synthesis"],
+ "Documento primario":["Documento primario","Primary document"],
+ "Espanol (prob.)":["Español (prob.)","Spanish (likely)"],
+ "Portugues (prob.)":["Portugués (prob.)","Portuguese (likely)"],
+ "Ingles/Espanol (prob.)":["Inglés/Español (prob.)","English/Spanish (likely)"],
+ "Frances/Espanol (prob.)":["Francés/Español (prob.)","French/Spanish (likely)"]
+};
+const es = s => (BI[s]?BI[s][0]:s);
+const en = s => (BI[s]?BI[s][1]:s);
+/* "Transversal" traduce distinto segun el eje: periodo vs region */
+const enPer = s => (s==="Transversal" ? "Cross-period" : en(s));
+/* part titles EN original -> ES translation */
+const PART_ES = {
+ "Parameters of Literary Culture":"Parámetros de la cultura literaria",
+ "From the Margins of Literary History":"Desde los márgenes de la historia literaria",
+ "Plurality of Discourse in Latin American Culture":"La pluralidad del discurso en la cultura latinoamericana",
+ "Cultural Institutions":"Las instituciones culturales",
+ "Textual Models and Their Transformations":"Los modelos textuales y sus transformaciones",
+ "The Cultural Centers of Latin America":"Los centros culturales de América Latina",
+ "Fissured Foundations: Nostalgia and New Beginnings":"Cimientos fisurados: nostalgia y nuevos comienzos",
+ "Internal Borders: Cultural Conflicts and State Discourse":"Fronteras internas: conflictos culturales y discurso de Estado",
+ "Liminality and Centrality of Literary Cultures in the Twentieth Century":"Liminalidad y centralidad de las culturas literarias en el s. XX",
+ "Literary Culture in the Twentieth Century":"La cultura literaria en el siglo XX"
+};
+const CH_ES = {
+ "The History of Oral Literature in Mexico":"Historia de la literatura oral en México",
+ "Social History of the Latin American Writer":"Historia social del escritor latinoamericano",
+ "Literary Culture during the Peruvian Viceroyalty":"La cultura literaria durante el virreinato del Perú",
+ "Laughing through One's Tears: Popular Culture in Mexico":"Reír entre lágrimas: la cultura popular en México",
+ "Black Presence in Brazilian Literature: From the Colonial Period to the Twentieth Century":"La presencia negra en la literatura brasileña (s. XVI–XX)",
+ "Bio-Policies Undergoing Transformation: Bodies and Ideas of American Identity":"Biopolíticas en transformación: cuerpos e identidad americana",
+ "The Rhetoric of Citizenship in Modernity":"La retórica de la ciudadanía en la modernidad",
+ "Plurality and Diversity of Theater Discourse":"Pluralidad y diversidad del discurso teatral",
+ "Mass Culture and Literature in Latin America":"Cultura de masas y literatura en América Latina",
+ "Literary Nationalism in Latin America":"El nacionalismo literario en América Latina"
+};
+
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+const VCOL=['var(--v1)','var(--v2)','var(--v3)'];
+const VINK=['#fff','#fff','var(--lime-ink)'];
+const VNAME=['Tomo I','Tomo II','Tomo III'];
+const VEN=['Vol. I','Vol. II','Vol. III'];
+
+/* ---------- tooltip ---------- */
+const tip=document.getElementById('tip');
+function showTip(e,html){tip.innerHTML=html;tip.style.opacity='1';moveTip(e);}
+function moveTip(e){const x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-10);
+  const y=Math.max(e.clientY-tip.offsetHeight-10,8);tip.style.left=x+'px';tip.style.top=y+'px';}
+function hideTip(){tip.style.opacity='0';}
+function bindTip(node,html){node.addEventListener('mouseenter',e=>showTip(e,html));
+  node.addEventListener('mousemove',moveTip);node.addEventListener('mouseleave',hideTip);}
+
+/* ---------- KPIs ---------- */
+const kpi=(v,l,badge,cls)=>{const d=el('div','kpi');
+  d.append(el('div','v',v),el('div','l',l));
+  if(badge)d.append(el('div','badge'+(cls?' '+cls:''),badge));return d;};
+document.getElementById('kpis').append(
+  kpi('176','capítulos y documentos analizados<br><span style="color:var(--ink-3)">chapters & documents</span>','censo completo'),
+  kpi('3<small>·</small>10','volúmenes y partes<br><span style="color:var(--ink-3)">volumes & parts</span>','1994–2004','sky'),
+  kpi('26<small>%</small>','del corpus dedicado a Brasil<br><span style="color:var(--ink-3)">of the corpus on Brazil</span>','luso-hispano','lime'),
+  kpi('41<small>%</small>','textos transversales, sin país único<br><span style="color:var(--ink-3)">cross-regional texts</span>','comparativo')
+);
+
+/* ---------- horizontal bars ---------- */
+function bars(id,data,opt={}){
+  const box=document.getElementById(id);box.innerHTML='';
+  const max=Math.max(...data.map(d=>d.v));
+  data.forEach((d,i)=>{
+    const row=el('div','bar');
+    const lab=el('div','lab');
+    lab.append(el('span','es',d.es));
+    if(d.en)lab.append(el('span','en2',d.en));
+    row.append(lab);
+    const track=el('div','track');
+    const fill=el('div','fill');
+    const w=Math.max(d.v/max*100,d.v>0?2:0);
+    fill.style.width=w+'%';
+    const hi = opt.highlightTop && i===0;
+    fill.style.background = d.color || (hi?'var(--violet)':'var(--violet-soft)');
+    const insideInk = hi? '#fff' : (d.color? (d.inkDark?'var(--lime-ink)':'#fff') : 'var(--violet)');
+    if(w>16){const s=el('span','valin',opt.fmt?opt.fmt(d.v):d.v);s.style.color=insideInk;fill.append(s);}
+    else{track.append(el('span','val',opt.fmt?opt.fmt(d.v):d.v));}
+    track.append(fill);row.append(track);box.append(row);
+    bindTip(row,`<b>${d.es}</b>${d.en?' · '+d.en:''}<br><span class="tv">${opt.fmt?opt.fmt(d.v):d.v}</span>${opt.unit||''}`);
+  });
+}
+/* legends */
+function volLegend(id){const box=document.getElementById(id);box.innerHTML='';
+  VCOL.forEach((c,i)=>{const p=el('span','pill');const dot=el('span','dot');dot.style.background=c;
+    p.append(dot,document.createTextNode(VNAME[i]+' · '+VEN[i]));box.append(p);});}
+volLegend('leg-vol');volLegend('leg-vol2');
+
+/* fig parte: color by volume */
+bars('fig-parte', D.por_parte.map(([lab,v])=>{
+  const vi=+lab[1]-1; const t=lab.split(': ')[1]; const pfx=lab.split(':')[0];
+  return {es:pfx+' · '+(PART_ES[t]||t), en:t, v, color:VCOL[vi], inkDark: vi===2};
+}), {unit:' textos'});
+
+bars('fig-region', D.macro_region.map(([k,v])=>({es:es(k),en:en(k),v})), {highlightTop:true,unit:' textos'});
+bars('fig-tema', D.macro_tema.map(([k,v])=>({es:es(k),en:en(k),v})), {highlightTop:true,unit:' textos'});
+bars('fig-siglo', D.siglo.map(([k,v])=>({es:es(k),en:enPer(k),v})), {highlightTop:true,unit:' textos'});
+bars('fig-alt-tipo', D.tipo_alteridad.map(([k,v])=>({es:es(k),en:en(k),v})), {highlightTop:true,unit:' textos'});
+
+/* alteridad por volumen */
+bars('fig-alt-vol', D.alteridad_volumen.map((r,i)=>({es:VNAME[i],en:VEN[i],v:r[1],color:VCOL[i],inkDark:i===2})),
+  {fmt:v=>{const idx=[21,0,8].indexOf(v);return v+' de '+(D.alteridad_volumen[i_of(v)]?D.alteridad_volumen[i_of(v)][2]:'');},unit:''});
+function i_of(v){return D.alteridad_volumen.findIndex(r=>r[1]===v);}
+/* simpler: rebuild with explicit totals */
+(function(){
+  const data=D.alteridad_volumen.map((r,i)=>({lab:VNAME[i],en:VEN[i],v:r[1],tot:r[2],color:VCOL[i],inkDark:i===2}));
+  const box=document.getElementById('fig-alt-vol');box.innerHTML='';
+  const max=Math.max(...data.map(d=>d.tot));
+  data.forEach(d=>{
+    const row=el('div','bar');const lab=el('div','lab');
+    lab.append(el('span','es',d.lab),el('span','en2',d.en));row.append(lab);
+    const track=el('div','track');
+    // ghost total
+    const ghost=el('div','fill');ghost.style.width=Math.max(d.tot/max*100,2)+'%';
+    ghost.style.background='var(--card)';ghost.style.border='1px dashed var(--line-2)';track.append(ghost);
+    const fill=el('div','fill');fill.style.width=Math.max(d.v/max*100,0)+'%';fill.style.background=d.color;
+    if(d.v/max*100>14){const s=el('span','valin',d.v);s.style.color=d.inkDark?'var(--lime-ink)':'#fff';fill.append(s);}
+    track.append(fill);row.append(track);box.append(row);
+    bindTip(row,`<b>${d.lab}</b> · ${d.en}<br><span class="tv">${d.v}</span> de ${d.tot} textos son de alteridad`);
+  });
+})();
+
+/* coautoria */
+bars('fig-coaut', D.coautoria_brasil.map(([k,c,t])=>({es:es(k),en:en(k),v:Math.round(c/t*100),color:'var(--sky)'})),
+  {fmt:v=>v+'%',unit:' en coautoría'});
+
+/* ---------- stacked (tema x volumen) ---------- */
+(function(){
+  const box=document.getElementById('fig-tema-vol');box.innerHTML='';
+  const T=D.tema_volumen.temas,M=D.tema_volumen.matrix;
+  const maxtot=Math.max(...M.map(r=>r[0]+r[1]+r[2]));
+  T.forEach((t,i)=>{
+    const row=M[i],tot=row[0]+row[1]+row[2];
+    const strow=el('div','strow');const lab=el('div','lab');
+    lab.append(el('span','es',es(t)),el('span','en2',en(t)));strow.append(lab);
+    const track=el('div','strack');track.style.width=(tot/maxtot*100)+'%';
+    row.forEach((v,vi)=>{if(v>0){const seg=el('div','seg');seg.style.flex=v;seg.style.background=VCOL[vi];
+      seg.style.color=VINK[vi];seg.textContent=v;
+      bindTip(seg,`<b>${es(t)}</b><br>${VNAME[vi]} · ${VEN[vi]}: <span class="tv">${v}</span>`);track.append(seg);}});
+    strow.append(track);box.append(strow);
+  });
+})();
+
+/* ---------- donut (eje brasil) ---------- */
+(function(){
+  const svg=document.getElementById('donut-eje');
+  const order=['Brasil','Hispanoamerica','Transversal'];
+  const cols={'Brasil':'var(--v1)','Hispanoamerica':'var(--v2)','Transversal':'var(--v3)'};
+  const map=Object.fromEntries(D.eje_brasil);
+  const total=order.reduce((a,k)=>a+map[k],0);
+  const cx=94,cy=94,r=68,sw=30;let a0=-Math.PI/2;
+  const NS='http://www.w3.org/2000/svg';
+  order.forEach(k=>{
+    const frac=map[k]/total,a1=a0+frac*2*Math.PI;
+    const x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
+    const large=frac>0.5?1:0;
+    const p=document.createElementNS(NS,'path');
+    p.setAttribute('d',`M ${x0} ${y0} A ${r} ${r} 0 ${large} 1 ${x1} ${y1}`);
+    p.setAttribute('fill','none');p.setAttribute('stroke',cols[k]);p.setAttribute('stroke-width',sw);
+    p.setAttribute('stroke-linecap','butt');svg.appendChild(p);
+    bindTip(p,`<b>${es(k)}</b> · ${en(k)}<br><span class="tv">${map[k]}</span> textos · ${Math.round(frac*100)}%`);
+    a0=a1+0.03;
+  });
+  const t1=document.createElementNS(NS,'text');t1.setAttribute('x',cx);t1.setAttribute('y',cy-4);
+  t1.setAttribute('text-anchor','middle');t1.setAttribute('font-family','Archivo');t1.setAttribute('font-weight','800');
+  t1.setAttribute('font-size','30');t1.setAttribute('fill','var(--ink)');t1.textContent='176';svg.appendChild(t1);
+  const t2=document.createElementNS(NS,'text');t2.setAttribute('x',cx);t2.setAttribute('y',cy+15);
+  t2.setAttribute('text-anchor','middle');t2.setAttribute('font-size','11');t2.setAttribute('fill','var(--ink-3)');
+  t2.setAttribute('font-family','Public Sans');t2.textContent='textos';svg.appendChild(t2);
+  const lg=document.getElementById('leg-eje');lg.innerHTML='';
+  order.forEach(k=>{const row=el('div','row');const dot=el('span','dot');dot.style.background=cols[k];
+    const nm=el('span');nm.append(el('span','nm',es(k)),document.createTextNode(' '),el('span','en3',en(k)));
+    row.append(dot,nm,el('span','n',map[k]));lg.append(row);});
+})();
+
+/* ---------- heatmaps ---------- */
+const RAMP=['var(--hm0)','var(--hm1)','var(--hm2)','var(--hm3)','var(--hm4)','var(--hm5)','var(--hm6)','var(--hm7)'];
+function cellStyle(v,max){if(v===0)return null;const r=v/max;const i=Math.min(7,1+Math.floor(r*6.99));
+  return{bg:RAMP[i],ink:r>0.42?'#fff':'var(--ink)'};}
+function heatmap(id,rowKeys,colKeys,matrix,unit){
+  const t=document.getElementById(id);t.innerHTML='';const max=Math.max(...matrix.flat());
+  const thead=el('thead');const hr=el('tr');hr.append(el('th','corner',''));
+  colKeys.forEach(c=>{const th=el('th','col');const sp=el('span');sp.textContent=es(c);th.append(sp);hr.append(th);});
+  thead.append(hr);t.append(thead);
+  const tb=el('tbody');
+  rowKeys.forEach((rk,i)=>{
+    const tr=el('tr');const th=el('th','row');
+    th.append(el('span','es',es(rk)),el('span','en2',en(rk)));tr.append(th);
+    matrix[i].forEach((v,j)=>{
+      const td=el('td');
+      if(v===0){td.className='z';td.textContent='·';}
+      else{const cs=cellStyle(v,max);td.style.background=cs.bg;td.style.color=cs.ink;td.textContent=v;
+        bindTip(td,`<b>${es(rk)}</b> × ${es(colKeys[j])}<br><span class="tv">${v}</span> ${unit}`);}
+      tr.append(td);
+    });
+    tb.append(tr);
+  });
+  t.append(tb);
+}
+function hmLegend(id,max){const box=document.getElementById(id);box.innerHTML='';
+  box.append(document.createTextNode('menos / less'));
+  const ramp=el('span','ramp');RAMP.slice(1).forEach(c=>{const i=el('i');i.style.background=c;ramp.append(i);});
+  box.append(ramp);box.append(document.createTextNode('más / more  ·  máx '+max));}
+
+heatmap('hm-tema-siglo', D.tema_siglo.temas, D.tema_siglo.siglos, D.tema_siglo.matrix, 'textos');
+hmLegend('hmleg1', Math.max(...D.tema_siglo.matrix.flat()));
+/* atlas: transpose to rows=themes, cols=regions */
+(function(){
+  const R=D.atlas.regiones,T=D.atlas.temas,M=D.atlas.matrix; // M[region][tema]
+  const MT=T.map((_,j)=>R.map((_,i)=>M[i][j]));               // MT[tema][region]
+  heatmap('hm-atlas', T, R, MT, 'textos');
+  hmLegend('hmleg2', Math.max(...MT.flat()));
+})();
+
+/* extension */
+bars('fig-ext', D.vol1_ext.map(d=>({es:CH_ES[d[1]]||d[1], en:d[1], v:d[0], color:'var(--sky)'})),
+  {fmt:v=>v+' pp',unit:' (páginas estimadas)'});
+
+/* seccion 11: mas ejes derivados */
+bars('fig-enfoque', D.enfoque.map(([k,v])=>({es:es(k),en:en(k),v})), {highlightTop:true,unit:' textos'});
+bars('fig-escala', D.escala.map(([k,v])=>({es:es(k),en:en(k),v,color:'var(--violet)'})), {unit:' textos'});
+bars('fig-formato', D.formato.map(([k,v])=>({es:es(k),en:en(k),v})), {highlightTop:true,unit:' textos'});
+bars('fig-autoria', D.autoria.map(([k,v])=>({es:es(k),en:en(k),v})), {highlightTop:true,unit:' textos'});
+bars('fig-ambito', D.ambito.map(([k,v])=>({es:es(k),en:en(k),v,color:'var(--sky)'})), {unit:' textos'});
+
+/* callout brasil */
+document.getElementById('co-brasil').innerHTML =
+ '<b>Lectura / Reading:</b> lo <b>pan-latinoamericano</b> (61 textos, 35%) y <b>Brasil</b> (46, 26%) copan más de la mitad del corpus. '+
+ 'Los Andes (13) y México (11) son los focos nacionales hispanoamericanos de mayor peso. / The pan-continental scale and Brazil together hold over half of all texts.';
+
+/* concentration KPIs */
+document.getElementById('kpis2').append(
+  kpi('0,54','Gini geográfico: reparto <b>desigual</b> entre regiones<br><span style="color:var(--ink-3)">geographic Gini — uneven</span>','concentrado'),
+  kpi('0,37','Gini temático: reparto <b>más equilibrado</b><br><span style="color:var(--ink-3)">thematic Gini — balanced</span>','diverso','sky'),
+  kpi('15<small>%</small>','de los capítulos sobre Brasil son en coautoría<br><span style="color:var(--ink-3)">of Brazil chapters are co-authored</span>','trabajo en red','lime')
+);
+
+/* glosario */
+(function(){
+  const box=document.getElementById('glosario');
+  const groups=[
+    ['Regiones · Regions', D.macro_region.map(d=>d[0])],
+    ['Temas · Themes', D.macro_tema.map(d=>d[0])],
+    ['Periodos · Periods', D.siglo.map(d=>d[0]).concat(['Prehispanico','Siglo XXI']).filter((x,i,a)=>a.indexOf(x)===i)]
+  ];
+  groups.forEach(([title,keys])=>{
+    const isPer=title.includes('Periods');
+    const c=el('div','card');c.append(el('div','ptitle',title));
+    const tb=document.createElement('table');tb.className='gtable';
+    keys.forEach(k=>{const tr=document.createElement('tr');
+      const a=document.createElement('td');a.textContent=es(k);
+      const b=document.createElement('td');b.textContent=isPer?enPer(k):en(k);
+      tr.append(a,b);tb.append(tr);});
+    c.append(tb);box.append(c);
+  });
+})();
+
+/* synthesis */
+(function(){
+  const items=[
+   ['Es latinoamericana, no hispanoamericana.','Brasil no es un apéndice: es un cuarto del corpus y el segundo foco tras lo continental.'],
+   ['Piensa por problemas, no por naciones ni siglos.','Cuatro de cada diez textos son transversales; los tres tomos reparten funciones, no cronologías.'],
+   ['Su gramática es la transculturación y la ciudad.','El par nación–modernidad–transculturación y los centros culturales son el eje conceptual, en la estela de Rama y Cornejo Polar.'],
+   ['Es modernocéntrica.','Colonia como origen, siglo XX como destino; lo prehispánico casi ausente.'],
+   ['Hizo de los márgenes un programa… pero situado.','Género, raza e indígena viven en el Tomo I y desaparecen del tomo institucional.'],
+   ['Especializa las regiones.','Andes/México → indígena; Brasil → instituciones; EE.UU. → teatro latino.'],
+   ['Trabajó en red.','La coautoría, marcada en Brasil, delata un proyecto colectivo antes que de autor.']
+  ];
+  const box=document.getElementById('syn');
+  items.forEach((it,i)=>{const d=el('div','item');d.append(el('div','k',String(i+1)));
+    d.append(el('div','t','<b>'+it[0]+'</b> '+it[1]));box.append(d);});
+})();
+
+/* back to top */
+const bt=document.getElementById('totop');
+bt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+addEventListener('scroll',()=>{bt.classList.toggle('show',scrollY>600);});
+</script>
