@@ -960,7 +960,7 @@ function renderIdx(){
       box.append(h);}
     const pk=r.p+'|'+r.pt;
     if(pk!==cp){cp=pk;cs=null;
-      if(r.p===0){box.append(el('div','parthead','Preliminares y aparato crítico <span class="pe">Front & back matter</span>'));}
+      if(!r.p){box.append(el('div','parthead','Preliminares y aparato crítico <span class="pe">Front & back matter</span>'));}
       else{const pe=PART_ES[r.pt]||r.pt;
         box.append(el('div','parthead','Parte '+r.p+': '+pe+' <span class="pe">· '+r.pt+'</span>'));}
     }
